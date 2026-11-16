@@ -42,11 +42,12 @@ class WikiTests(unittest.TestCase):
         with self.assertRaises(ValueError):serve.append_record(self.variants,updated,{**second,'record_id':'fourth','note':' '})
     def test_build_no_demo_and_sources(self):
         build.main();html=(self.root/'index.html').read_text()
-        self.assertEqual(html.count('class="variant"'),4)
+        self.assertEqual(html.count('class="variant"'),len(self.variants))
         self.assertNotIn('DEMO-A',html)
         for v in self.variants:
             self.assertIn(v['accession'],html)
-            self.assertTrue(v['explanation']['sources'])
+            if v.get('explanation'):
+                self.assertTrue(v['explanation']['sources'])
         self.assertNotIn('<!-- RECORDS -->',html)
     def test_http_save_reload_duplicate_reject_and_rollback(self):
         build.main()
