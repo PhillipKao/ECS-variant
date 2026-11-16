@@ -1,0 +1,134 @@
+[
+  {
+    "gene": "GJB2",
+    "transcript": "NM_004004.6",
+    "hgvs": "c.11G>A",
+    "protein": "p.Gly4Asp",
+    "accession": "VCV000044724",
+    "history": [
+      {
+        "date": "2026-11-16",
+        "version": 78,
+        "classification": "Conflicting classifications of pathogenicity",
+        "review": "criteria provided, conflicting classifications",
+        "scope": "Germline · VCV 整體分類",
+        "note": "13 筆提交納入彙整，分別為 Benign 2 筆、Likely benign 10 筆、Uncertain significance 1 筆。保留 ClinVar 的衝突分類。"
+      }
+    ],
+    "explanation": {
+      "summary": "這是 GJB2 的錯義變異，將 connexin 26 蛋白第 4 個胺基酸由甘胺酸改為天門冬胺酸（p.Gly4Asp）。",
+      "impact": "本站收錄的 ClinVar 彙整結果為分類衝突：包含 Uncertain significance、Benign 與 Likely benign；目前不能將此位點直接視為已確立的聽損致病原因。",
+      "context": "個別提交者的良性或意義未明判讀，不等於 VCV 整體結論；對此位點的實際影響仍需核對其他基因變異、家族與臨床證據。",
+      "sources": [
+        {
+          "title": "ClinVar：GJB2 p.Gly4Asp",
+          "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/VCV000044724.78/"
+        }
+      ],
+      "checked_on": "2026-11-16"
+    }
+  },
+  {
+    "gene": "SLC26A4",
+    "transcript": "NM_000441.2",
+    "hgvs": "c.919-2A>G",
+    "protein": "",
+    "accession": "VCV000004840",
+    "history": [
+      {
+        "date": "2026-11-16",
+        "version": 70,
+        "classification": "Pathogenic",
+        "review": "reviewed by expert panel",
+        "scope": "Germline · Pendred syndrome",
+        "note": "此版本採用 ClinGen Hearing Loss Variant Curation Expert Panel 對 Pendred syndrome 的判讀。"
+      }
+    ],
+    "explanation": {
+      "summary": "這個變異位於 SLC26A4 的典型剪接接受位點，可能使 RNA 剪接異常；ClinVar 收錄的功能研究描述了外顯子 8 跳讀。",
+      "impact": "SLC26A4 功能缺失與隱性遺傳的感音性聽損有關，可伴隨前庭導水管擴大；Pendred syndrome 也可能出現甲狀腺相關表現。這些是疾病譜的可能表現，不能單憑此位點預測個人的症狀或嚴重度。",
+      "context": "通常須在兩條同源染色體各有致病變異，並結合臨床證據判讀；只檢出單一隱性致病等位基因，不能據此確診。此處中文說明的查核日期獨立於 ClinVar 快照，不會改寫既有收錄版本。",
+      "sources": [
+        {
+          "title": "ClinVar：c.919-2A>G",
+          "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/4840/"
+        },
+        {
+          "title": "GeneReviews：SLC26A4 相關聽損",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK1467/"
+        }
+      ],
+      "checked_on": "2026-11-16"
+    }
+  },
+  {
+    "gene": "GJB2",
+    "transcript": "NM_004004.6",
+    "hgvs": "c.109G>A",
+    "protein": "p.Val37Ile",
+    "accession": "VCV000017023",
+    "history": [
+      {
+        "date": "2026-11-16",
+        "version": 166,
+        "classification": "Pathogenic",
+        "review": "reviewed by expert panel",
+        "scope": "Germline · Nonsyndromic genetic hearing loss",
+        "note": "此版本 Germline 彙整分類採用 ClinGen Hearing Loss Variant Curation Expert Panel 對體染色體隱性非症候群性聽損的 Pathogenic 判讀。"
+      }
+    ],
+    "explanation": {
+      "summary": "這是 GJB2 的錯義變異，將 connexin 26 蛋白第 37 個胺基酸由纈胺酸改為異白胺酸（p.Val37Ile）。",
+      "impact": "ClinGen 專家小組認定其與體染色體隱性非症候群性聽損有關，具有不完全外顯率及表現差異。雙等位基因相關病例常見輕至中度聽損，也可能隨年齡緩慢進展；並非每位具有相關基因型的人都會有相同症狀。",
+      "context": "須確認另一個 GJB2 等位基因及兩個變異是否位於不同染色體（in trans），並結合聽力與家族資料；單一隱性等位基因不等同已確診聽損。",
+      "sources": [
+        {
+          "title": "ClinVar：p.Val37Ile",
+          "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/VCV000017023.166/"
+        },
+        {
+          "title": "ClinGen 專家共識（PMID 31160754）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31160754/"
+        },
+        {
+          "title": "GeneReviews：GJB2 相關聽損",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK1272/"
+        }
+      ],
+      "checked_on": "2026-11-16"
+    }
+  },
+  {
+    "gene": "GJB2",
+    "transcript": "NM_004004.6",
+    "hgvs": "c.235del",
+    "protein": "p.Leu79fs",
+    "accession": "VCV000017014",
+    "history": [
+      {
+        "date": "2026-11-16",
+        "version": 85,
+        "classification": "Pathogenic",
+        "review": "reviewed by expert panel",
+        "scope": "Germline · Autosomal recessive nonsyndromic hearing loss",
+        "note": "此版本 Germline 彙整分類採用 ClinGen Hearing Loss Variant Curation Expert Panel 對體染色體隱性非症候群性聽損的 Pathogenic 判讀。"
+      }
+    ],
+    "explanation": {
+      "summary": "c.235del 是 GJB2 的單一核苷酸缺失變異，也常寫作 c.235delC；它改變後續蛋白閱讀框，ClinVar 的蛋白標記為 p.Leu79fs。",
+      "impact": "此移碼變異可造成蛋白提早終止及功能缺失。與另一個致病 GJB2 等位基因構成雙等位基因型時，可與體染色體隱性非症候群性聽損相關；雙截短變異的病例整體較常出現重度至極重度聽損，但個人表現仍有差異。",
+      "context": "嚴重度也受另一個等位基因與其他因素影響。只有一個隱性致病等位基因通常代表帶因狀態，不應單憑此項結果推定個人必然發病。",
+      "sources": [
+        {
+          "title": "ClinVar：c.235del",
+          "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/VCV000017014.85/"
+        },
+        {
+          "title": "GeneReviews：GJB2 相關聽損",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK1272/"
+        }
+      ],
+      "checked_on": "2026-11-16"
+    }
+  }
+]
