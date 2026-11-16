@@ -18,7 +18,7 @@ python3 scripts/serve.py
 
 然後開啟 http://127.0.0.1:8765 。也可雙擊 `開啟判讀編輯器.command`，再依終端機顯示的網址開啟。若連接埠已被使用，可加上 `--port 8766`。按 Ctrl+C 停止。
 
-1. 在右側表單選擇位點，或展開位點後按「＋ 新增判讀」。
+1. 在右側表單選取或輸入基因及位點，或展開位點後按「＋ 新增判讀」。
 2. 填實際判讀日期、分類、適用疾病／範圍及判讀原因。依據可包含證據代碼、文獻或與前次不同之處。只填可公開的變異層級內容，不含個案識別資訊。
 3. 確認頁面顯示「本機編輯模式」，按「儲存並重建首頁」。紀錄會直接追加到 `data/lab.json`，保留歷史，並重建 `index.html`。同一筆重送不重複新增；日期不得早於既有紀錄。同日可保存多筆不同判讀。
 4. 重開首頁仍能看到正式紀錄。更新 GitHub Pages 時，重新上傳重建後的首頁、資料及 assets。
@@ -54,3 +54,5 @@ python3 -m unittest discover -s tests
 ## GitHub Pages
 
 將 `index.html`、`assets/`、`data/`、`template.html`、`scripts/`、`AGENTS.md`、`README.md` 上傳到 repository 根目錄。不要上傳 `work/` 暫存及測試資料。在 Settings → Pages 選 Deploy from a branch，設定 main 與 / (root)。GitHub Pages 提供閱讀與瀏覽器草稿功能，不會執行 Python 寫入 API。
+
+首次輸入的實驗室位點依基因、轉錄本、HGVS 建立 LAB: 識別碼並加入索引。判讀結果可自行輸入。首頁統計索引中的不同基因及位點，正式判讀筆數只計已存檔紀錄。
