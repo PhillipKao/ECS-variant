@@ -3,8 +3,7 @@ const state = JSON.parse(document.getElementById('wiki-state').textContent);
 const $ = selector => document.querySelector(selector);
 const rows = [...document.querySelectorAll('.variant')];
 const form = $('#lab-form');
-const archive = state.archive || [];
-const archiveById = new Map(archive.map(v => [v.accession,v]));
+function reports(acc) { return state.labs.find(v => v.accession === acc)?.reporting_history || []; }
 const key = 'biolove.variant-wiki.lab-drafts.v1';
 let drafts = [], storageAvailable = true, token = null;
 try { drafts = JSON.parse(localStorage.getItem(key) || '[]'); if (!Array.isArray(drafts)) throw Error('草稿格式錯誤'); } catch { drafts = []; storageAvailable = false; }
@@ -39,7 +38,7 @@ function refresh() {
   let count = 0;
   for (const row of rows) {
     const v = catalog().find(v => v.accession === row.dataset.accession);
-    const has = formal(v.accession).length + draftRows(v.accession).length + (archiveById.get(v.accession)?.records.length || 0) > 0;
+    const has = formal(v.accession).length + draftRows(v.accession).length + reports(v.accession).length > 0;
     row.hidden = ![v.gene,v.transcript,v.hgvs,v.protein,v.accession].join(' ').toLowerCase().includes(term) || (gene && v.gene !== gene) || (filter === 'yes' && !has) || (filter === 'no' && has);
     if (!row.hidden) count++;
   }
@@ -48,7 +47,7 @@ function refresh() {
 }
 function render() {
   updateIndex();
-  $('#lab-total').textContent = state.labs.reduce((n,x) => n+x.history.length,0);
+  $('#lab-total').textContent = state.labs.reduce((n,x) => n+x.history.length+(x.reporting_history?.length || 0),0);
   for (const row of rows) {
     const acc = row.dataset.accession, history = formal(acc), pending = draftRows(acc);
     const entries = [...history.map(h => ({...h,draft:false})), ...pending.map(h => ({...h,draft:true}))];
@@ -59,27 +58,15 @@ function render() {
       previous = h;
       return `<section class="event"><small>${esc(h.date)} · ${h.draft ? '<span class="draft-tag">本機草稿・尚未寫入專案</span>' : '第 '+esc(h.revision)+' 筆'}</small><h4>${esc(change)}</h4>${badge(h.classification)}<p class="multiline">${esc(h.note)}</p><small>${esc(h.scope)} ${h.clinvar_version && /^VCV\d+\.\d+$/.test(h.clinvar_version) ? `· <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/${h.clinvar_version}/">${h.clinvar_version}</a>` : ''}</small>${h.draft ? `<p><button type="button" class="text-button discard-draft" data-record-id="${esc(h.record_id)}">刪除此筆草稿</button></p>` : ''}</section>`;
     }).reverse().join('');
-    row.querySelector('[data-lab-history]').innerHTML = html || '<p class="empty">尚無實驗室判讀。可在右側表單新增第一筆紀錄。</p>';
-    row.querySelector('[data-lab-latest]').innerHTML = history.length ? badge(history.at(-1).classification)+`<small>${esc(history.at(-1).date)}</small>` : '尚未判讀';
+    const decisions = reports(acc);
+    const reportHtml = decisions.map(record => {
+      const dates = record.dates.join('、') || '日期未載';
+      return `<section class="event"><small>討論日期 · ${esc(dates)}</small><h4>出報決策 · ${esc(record.decision)}</h4><p class="multiline">${esc(record.note)}</p><small>${esc(record.source)}</small></section>`;
+    }).join('');
+    row.querySelector('[data-lab-history]').innerHTML = (html + reportHtml) || '<p class="empty">尚無實驗室判讀。可在右側表單新增第一筆紀錄。</p>';
+    row.querySelector('[data-lab-latest]').innerHTML = history.length ? badge(history.at(-1).classification)+`<small>${esc(history.at(-1).date)}</small>` : decisions.length ? '見下方出報決策' : '尚未判讀';
     if (pending.length) row.querySelector('[data-lab-latest]').innerHTML += `<small>另有 ${pending.length} 筆本機草稿</small>`;
   }
-  for (const row of rows) {
-    const item=archiveById.get(row.dataset.accession);
-    if (!item) continue;
-    row.querySelector('.archived')?.remove();
-    const panel=document.createElement('div');
-    panel.className='archived';
-    panel.innerHTML='<h3>實驗室歷年出報討論</h3>'+item.records.map(record=>{
-      const dates=record.dates.length ? record.dates.join('、') : '日期未載';
-      return `<section class="event"><small>討論日期 · ${esc(dates)}</small><h4>出報決策 · ${esc(record.decision)}</h4>${record.note ? '<p>'+esc(record.note)+'</p>' : ''}<small>${esc(record.source)}</small></section>`;
-    }).join('');
-    row.querySelector('.variant-body').append(panel);
-    if (!formal(item.accession).length) {
-      row.querySelector('[data-lab-latest]').textContent='見歷年出報討論';
-      if (!draftRows(item.accession).length) row.querySelector('[data-lab-history]').textContent='尚無新增的分類紀錄';
-    }
-  }
-  $('#archive-total').textContent=archive.reduce((sum,v)=>sum+v.records.length,0);
   const pendingCount = drafts.filter(d => !isFormalDraft(d)).length;
   $('#draft-count').textContent = pendingCount ? `此瀏覽器有 ${pendingCount} 筆未正式存檔草稿。匯出包含既有紀錄與草稿，原草稿仍會保留。` : '目前沒有本機草稿。';
   $('#sync-drafts').hidden = !(token && pendingCount);
@@ -87,7 +74,7 @@ function render() {
 }
 function catalog() {
   const all = new Map(state.variants.map(v => [v.accession,v]));
-  for (const item of [...archive,...state.labs,...drafts]) {
+  for (const item of [...state.labs,...drafts]) {
     if (!all.has(item.accession) && item.gene && item.hgvs) all.set(item.accession,item);
   }
   return [...all.values()];
