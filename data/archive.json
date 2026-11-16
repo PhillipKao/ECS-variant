@@ -1,0 +1,1933 @@
+[
+  {
+    "gene": "MTHFR",
+    "hgvs": "c.665C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "原表未填",
+        "note": "原表註記檢測基因已調整。"
+      }
+    ],
+    "transcript": "NM_005957.5",
+    "protein": "p.Ala222Val",
+    "accession": "VCV000003520"
+  },
+  {
+    "gene": "DHCR7",
+    "hgvs": "c.907G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "原表未填",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001360.3",
+    "protein": "p.Gly303Arg",
+    "accession": "VCV000198773"
+  },
+  {
+    "gene": "ABCA4",
+    "hgvs": "c.4610C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-10-24",
+          "2026-11-07"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000350.3",
+    "protein": "p.Thr1537Met",
+    "accession": "VCV000099306"
+  },
+  {
+    "gene": "TSHR",
+    "hgvs": "c.1349G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "原表未填",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000369.5",
+    "protein": "p.Arg450His",
+    "accession": "VCV000225505"
+  },
+  {
+    "gene": "ABCA4",
+    "hgvs": "c.2828G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-10-29"
+        ],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000350.3",
+    "protein": "p.Arg943Gln",
+    "accession": "VCV000007913"
+  },
+  {
+    "gene": "HFE",
+    "hgvs": "c.845G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-07-04"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000410.4",
+    "protein": "p.Cys282Tyr",
+    "accession": "VCV000000009"
+  },
+  {
+    "gene": "ABCA4",
+    "hgvs": "c.763C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-05"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000350.3",
+    "protein": "p.Arg255Cys",
+    "accession": "VCV000143077"
+  },
+  {
+    "gene": "SLC12A3",
+    "hgvs": "c.2546T>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001126108.2",
+    "protein": "p.Leu849His",
+    "accession": "VCV000225470"
+  },
+  {
+    "gene": "ABCA4",
+    "hgvs": "c.3608G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-06-10"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000350.3",
+    "protein": "p.Gly1203Glu",
+    "accession": "VCV000497057"
+  },
+  {
+    "gene": "USH2A",
+    "hgvs": "c.2802T>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-03-02"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_206933.4",
+    "protein": "p.Cys934Trp",
+    "accession": "VCV000143179"
+  },
+  {
+    "gene": "ABCA4",
+    "hgvs": "c.5693G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-03-11"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000350.3",
+    "protein": "p.Arg1898His",
+    "accession": "VCV000099398"
+  },
+  {
+    "gene": "CYP21A2",
+    "hgvs": "c.1174G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-11-22"
+        ],
+        "decision": "出報",
+        "note": "原表註記需送驗證。"
+      }
+    ],
+    "transcript": "NM_000500.9",
+    "protein": "p.Ala392Thr",
+    "accession": "VCV000225335"
+  },
+  {
+    "gene": "ABCA4",
+    "hgvs": "c.6320G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-11-12"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000350.3",
+    "protein": "p.Arg2107His",
+    "accession": "VCV000099448"
+  },
+  {
+    "gene": "DMD",
+    "hgvs": "c.7555G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-10-06"
+        ],
+        "decision": "出報",
+        "note": "原表註記已完成驗證。"
+      }
+    ],
+    "transcript": "NM_004006.3",
+    "protein": "p.Asp2519Asn",
+    "accession": "VCV000427170"
+  },
+  {
+    "gene": "ACAD9",
+    "hgvs": "c.1405C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-06-10"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_014049.5",
+    "protein": "p.Arg469Trp",
+    "accession": "VCV000214007"
+  },
+  {
+    "gene": "ETFDH",
+    "hgvs": "c.250G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_004453.4",
+    "protein": "p.Ala84Thr",
+    "accession": "VCV000012028"
+  },
+  {
+    "gene": "ACADM",
+    "hgvs": "c.127G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-02-02"
+        ],
+        "decision": "不出報",
+        "note": ""
+      },
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-02-02"
+        ],
+        "decision": "不出報",
+        "note": "討論考量族群頻率、殘餘酵素活性與臨床表現，引用 PMID 23028790、35629059。"
+      }
+    ],
+    "transcript": "NM_000016.6",
+    "protein": "p.Glu43Lys",
+    "accession": "VCV000092257"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "c.1865G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000492.4",
+    "protein": "p.Gly622Asp",
+    "accession": "VCV000035833"
+  },
+  {
+    "gene": "ACADVL",
+    "hgvs": "c.1153C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-06"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000018.4",
+    "protein": "p.Arg385Trp",
+    "accession": "VCV000193786"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "IVS8-5T-12TG",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "",
+    "protein": "",
+    "accession": "LAB:CFTR||IVS8-5T-12TG"
+  },
+  {
+    "gene": "AIRE",
+    "hgvs": "c.652+1G>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-05-19"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000383.4",
+    "protein": "",
+    "accession": "VCV000370839"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "IVS8-5T-13TG",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "",
+    "protein": "",
+    "accession": "LAB:CFTR||IVS8-5T-13TG"
+  },
+  {
+    "gene": "ALMS1",
+    "hgvs": "c.427C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-07-03"
+        ],
+        "decision": "不出報",
+        "note": ""
+      },
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2025-07-04"
+        ],
+        "decision": "不出報",
+        "note": "預測蛋白功能可能改變，但當時缺乏疾病關聯報告。"
+      }
+    ],
+    "transcript": "NM_001378454.1",
+    "protein": "p.Gln143Ter",
+    "accession": "VCV000551028"
+  },
+  {
+    "gene": "POLG",
+    "hgvs": "c.2890C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-07",
+          "2025-08-21",
+          "2025-10-15",
+          "2026-06-10",
+          "2026-07-30",
+          "2026-09-30",
+          "2026-10-06"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_002693.3",
+    "protein": "p.Arg964Cys",
+    "accession": "VCV000206537"
+  },
+  {
+    "gene": "ALMS1",
+    "hgvs": "c.12442C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-21"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001378454.1",
+    "protein": "p.Arg4148Ter",
+    "accession": "VCV000552771"
+  },
+  {
+    "gene": "CYP21A2",
+    "hgvs": "c.293-13C>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-15"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000500.9",
+    "protein": "",
+    "accession": "VCV000012155"
+  },
+  {
+    "gene": "ALPL",
+    "hgvs": "c.529G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-09-08"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000478.6",
+    "protein": "p.Ala177Thr",
+    "accession": "VCV000556961"
+  },
+  {
+    "gene": "NDUFAF5",
+    "hgvs": "c.836T>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_024120.5",
+    "protein": "p.Met279Arg",
+    "accession": "VCV000225036"
+  },
+  {
+    "gene": "ASL",
+    "hgvs": "c.571C>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-02-25"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000048.4",
+    "protein": "p.Arg191Gly",
+    "accession": "VCV000692055"
+  },
+  {
+    "gene": "F8",
+    "hgvs": "c.4531G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "不出報",
+        "note": "原表註記過往 ClinVar 分類有異動。"
+      }
+    ],
+    "transcript": "NM_000132.4",
+    "protein": "p.Val1511Ile",
+    "accession": "VCV001685793"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.3316G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-10-29",
+          "2025-08-06"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "p.Val1106Ile",
+    "accession": "VCV000495414"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "c.4056G>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-09-19",
+          "2026-01-06",
+          "2026-03-14",
+          "2026-08-21",
+          "2026-09-30"
+        ],
+        "decision": "出報",
+        "note": ""
+      },
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-01-06"
+        ],
+        "decision": "後續改為出報",
+        "note": "原表記載 2024-09-19 決定不出報，2025 年 10 月重新檢視文獻後改為出報。"
+      }
+    ],
+    "transcript": "NM_000492.4",
+    "protein": "p.Gln1352His",
+    "accession": "VCV000007237"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.3443T>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-05-05"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "p.Ile1148Thr",
+    "accession": "VCV000037122"
+  },
+  {
+    "gene": "NPHS2",
+    "hgvs": "c.686G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-10-04",
+          "2026-09-08"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_014625.4",
+    "protein": "p.Arg229Gln",
+    "accession": "VCV000005370"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.3426G>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-05-05"
+        ],
+        "decision": "出報",
+        "note": ""
+      },
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-04-17"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "p.Gln1142His",
+    "accession": "VCV000370151"
+  },
+  {
+    "gene": "NPHS1",
+    "hgvs": "c.2398C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-10-14",
+          "2026-02-10",
+          "2026-05-12"
+        ],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_004646.4",
+    "protein": "p.Arg800Cys",
+    "accession": "VCV000222761"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.3688A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-08-18"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "p.Ile1230Val",
+    "accession": "VCV000312379"
+  },
+  {
+    "gene": "BTD",
+    "hgvs": "c.571C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-10-14"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001370658.1",
+    "protein": "p.Arg191Cys",
+    "accession": "VCV000025028"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.-676A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-08-26",
+          "2026-06-05"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "",
+    "accession": "VCV000393099"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.588C>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-12-04"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "p.Asp196Glu",
+    "accession": "VCV000554931"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.2333G>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-06-28"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "p.Arg778Leu",
+    "accession": "VCV000003852"
+  },
+  {
+    "gene": "COL4A3",
+    "hgvs": "c.3312AAGTCCTGG[1]",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-11-14"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000091.5",
+    "protein": "p.1105SPG[1]",
+    "accession": "VCV000553803"
+  },
+  {
+    "gene": "ATP7B",
+    "hgvs": "c.2662A>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "原表未填",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000053.4",
+    "protein": "p.Thr888Pro",
+    "accession": "VCV000642900"
+  },
+  {
+    "gene": "CLN5",
+    "hgvs": "c.187C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-12-04"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_006493.4",
+    "protein": "p.Arg63Cys",
+    "accession": "VCV000190222"
+  },
+  {
+    "gene": "BBS10",
+    "hgvs": "c.445dup",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-07-20"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_024685.4",
+    "protein": "p.Leu149fs",
+    "accession": "VCV000661491"
+  },
+  {
+    "gene": "BCHE",
+    "hgvs": "c.884A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "原表未填",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000055.4",
+    "protein": "p.Lys295Arg",
+    "accession": "VCV000225302"
+  },
+  {
+    "gene": "SLC26A4",
+    "hgvs": "c.1454C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2024-12-06"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000441.2",
+    "protein": "p.Thr485Met",
+    "accession": "VCV000554960"
+  },
+  {
+    "gene": "BRIP1",
+    "hgvs": "c.1A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-03-24"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_032043.3",
+    "protein": "p.Met1Val",
+    "accession": "VCV000187378"
+  },
+  {
+    "gene": "DPYD",
+    "hgvs": "c.220C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-01-20",
+          "2026-05-27"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000110.4",
+    "protein": "p.Arg74Ter",
+    "accession": "VCV000370757"
+  },
+  {
+    "gene": "BRIP1",
+    "hgvs": "c.3072del",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-06-05"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_032043.3",
+    "protein": "p.Ser1025fs",
+    "accession": "VCV000461045"
+  },
+  {
+    "gene": "TSHR",
+    "hgvs": "c.394G>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-01-24"
+        ],
+        "decision": "原表未填",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000369.5",
+    "protein": "p.Gly132Arg",
+    "accession": "VCV000314693"
+  },
+  {
+    "gene": "BSND",
+    "hgvs": "c.23G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-04-16"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_057176.3",
+    "protein": "p.Arg8Gln",
+    "accession": "VCV002202510"
+  },
+  {
+    "gene": "TYR",
+    "hgvs": "c.1205G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-02-04"
+        ],
+        "decision": "不出報",
+        "note": ""
+      },
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-01-05"
+        ],
+        "decision": "不出報",
+        "note": "討論考量族群頻率、可能的輔助因子作用與無症狀觀察。"
+      }
+    ],
+    "transcript": "NM_000372.5",
+    "protein": "p.Arg402Gln",
+    "accession": "VCV000003779"
+  },
+  {
+    "gene": "CYP1B1",
+    "hgvs": "c.1103G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [],
+        "decision": "原表未填",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000104.4",
+    "protein": "p.Arg368His",
+    "accession": "VCV000007739"
+  },
+  {
+    "gene": "BTD",
+    "hgvs": "c.1246G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-03-28"
+        ],
+        "decision": "出報",
+        "note": "討論考量反式等位基因及 PM3、PM5 證據，當時建議暫時出報。"
+      }
+    ],
+    "transcript": "NM_001370658.1",
+    "protein": "p.Glu416Lys",
+    "accession": "VCV000422496"
+  },
+  {
+    "gene": "F8",
+    "hgvs": "c.3169G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-03-25",
+          "2025-10"
+        ],
+        "decision": "不出報",
+        "note": "原表註記 2025-10-05 ClinVar 分類更新為 Benign。"
+      }
+    ],
+    "transcript": "NM_000132.4",
+    "protein": "p.Glu1057Lys",
+    "accession": "VCV000010251"
+  },
+  {
+    "gene": "BTD",
+    "hgvs": "c.1270G>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-04-25"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001370658.1",
+    "protein": "p.Asp424His",
+    "accession": "VCV000001900"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "c.3205G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-03-28"
+        ],
+        "decision": "出報",
+        "note": "討論保留對同型合子及其他變異組合的疑問。"
+      }
+    ],
+    "transcript": "NM_000492.4",
+    "protein": "p.Gly1069Arg",
+    "accession": "VCV000053684"
+  },
+  {
+    "gene": "UGT1A1",
+    "hgvs": "c.1091C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-05"
+        ],
+        "decision": "出報",
+        "note": "討論記載從 Unknown 調整為 Carrier，並考量雙等位基因型可能的表現。"
+      }
+    ],
+    "transcript": "NM_000463.3",
+    "protein": "p.Pro364Leu",
+    "accession": "VCV000212543"
+  },
+  {
+    "gene": "SMPD1",
+    "hgvs": "c.995C>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-03-20"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000543.5",
+    "protein": "p.Pro332Arg",
+    "accession": "VCV000403463"
+  },
+  {
+    "gene": "FKRP",
+    "hgvs": "c.328C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-04-08"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_024301.5",
+    "protein": "p.Arg110Trp",
+    "accession": "VCV000408718"
+  },
+  {
+    "gene": "HBA2",
+    "hgvs": "c.369C>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-04-08"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000517.6",
+    "protein": "p.His123Gln",
+    "accession": "VCV000439771"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "c.2936A>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-09-02"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000492.4",
+    "protein": "p.Asp979Ala",
+    "accession": "VCV000053602"
+  },
+  {
+    "gene": "GAA",
+    "hgvs": "c.752C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-04-21"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000152.5",
+    "protein": "p.Ser251Leu",
+    "accession": "VCV000325781"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "c.220C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-03-24"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000492.4",
+    "protein": "p.Arg74Trp",
+    "accession": "VCV000196277"
+  },
+  {
+    "gene": "GAA",
+    "hgvs": "c.761C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-04-21"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000152.5",
+    "protein": "p.Ser254Leu",
+    "accession": "VCV000325782"
+  },
+  {
+    "gene": "CNGB3",
+    "hgvs": "c.1208G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-05-23"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_019098.5",
+    "protein": "p.Arg403Gln",
+    "accession": "VCV000143154"
+  },
+  {
+    "gene": "COL4A3",
+    "hgvs": "c.4793T>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-07-28"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000091.5",
+    "protein": "p.Leu1598Arg",
+    "accession": "VCV000550745"
+  },
+  {
+    "gene": "COL4A4",
+    "hgvs": "c.4715C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-12-16"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000092.5",
+    "protein": "p.Pro1572Leu",
+    "accession": "VCV000017409"
+  },
+  {
+    "gene": "GBA",
+    "hgvs": "c.1607A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-05-19"
+        ],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "",
+    "protein": "",
+    "accession": "LAB:GBA||c.1607A>G"
+  },
+  {
+    "gene": "CYP11B1",
+    "hgvs": "c.449C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-05-19"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000497.4",
+    "protein": "p.Ser150Leu",
+    "accession": "VCV000632517"
+  },
+  {
+    "gene": "SERPINA1",
+    "hgvs": "c.863A>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-06-10"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001127701.1",
+    "protein": "p.Glu288Val",
+    "accession": "VCV000017969"
+  },
+  {
+    "gene": "G6PD",
+    "hgvs": "c.1114C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-06-16"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000402.4",
+    "protein": "p.Leu372Phe",
+    "accession": "VCV000010405"
+  },
+  {
+    "gene": "GNE",
+    "hgvs": "c.18T>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-07-04",
+          "2025-07-29"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001128227.3",
+    "protein": "p.Tyr6Ter",
+    "accession": "VCV000583405"
+  },
+  {
+    "gene": "CYP27A1",
+    "hgvs": "c.1415G>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-22"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000784.4",
+    "protein": "p.Gly472Ala",
+    "accession": "VCV000065851"
+  },
+  {
+    "gene": "G6PD",
+    "hgvs": "c.1478G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-07-04"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000402.4",
+    "protein": "p.Arg493His",
+    "accession": "VCV000100059"
+  },
+  {
+    "gene": "HFE",
+    "hgvs": "c.187C>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-02-10",
+          "2026-03-31",
+          "2026-05-25",
+          "2026-09-30",
+          "2026-11-02"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000410.4",
+    "protein": "p.His63Asp",
+    "accession": "VCV000000010"
+  },
+  {
+    "gene": "DMD",
+    "hgvs": "c.542_547delinsTGGTCG",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-06-24"
+        ],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "",
+    "protein": "",
+    "accession": "LAB:DMD||c.542_547delinsTGGTCG"
+  },
+  {
+    "gene": "GALNS",
+    "hgvs": "c.100CTGCTC[1]",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-08-26"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000512.5",
+    "protein": "p.Leu36_Leu37del",
+    "accession": "VCV000193104"
+  },
+  {
+    "gene": "EDA",
+    "hgvs": "c.206G>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-11-25"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001399.5",
+    "protein": "p.Arg69Leu",
+    "accession": "VCV000011032"
+  },
+  {
+    "gene": "F11",
+    "hgvs": "c.569T>C",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-11-07"
+        ],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000128.4",
+    "protein": "p.Leu190Pro",
+    "accession": "VCV004747425"
+  },
+  {
+    "gene": "HBB",
+    "hgvs": "c.341T>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-09-04"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000518.5",
+    "protein": "p.Val114Glu",
+    "accession": "VCV000015286"
+  },
+  {
+    "gene": "F2",
+    "hgvs": "c.1814_1815del",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-06"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000506.5",
+    "protein": "p.His605fs",
+    "accession": "VCV000627262"
+  },
+  {
+    "gene": "F8",
+    "hgvs": "c.4828G>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-09-09",
+          "2026-02-05"
+        ],
+        "decision": "不出報",
+        "note": ""
+      },
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-02-05"
+        ],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000132.4",
+    "protein": "p.Ala1610Ser",
+    "accession": "VCV001685791"
+  },
+  {
+    "gene": "NPHS1",
+    "hgvs": "c.-489GA[7]",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2025-11-25"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_004646.4",
+    "protein": "",
+    "accession": "VCV000056416"
+  },
+  {
+    "gene": "GALC",
+    "hgvs": "c.2041G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-03-31"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000153.4",
+    "protein": "p.Val681Met",
+    "accession": "VCV000208291"
+  },
+  {
+    "gene": "HBB",
+    "hgvs": "c.440_441dup",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-19"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000518.5",
+    "protein": "p.Ter148ThrextTer?",
+    "accession": "VCV000439161"
+  },
+  {
+    "gene": "RAG2",
+    "hgvs": "c.218G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-01-30"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000536.4",
+    "protein": "p.Arg73His",
+    "accession": "VCV000496620"
+  },
+  {
+    "gene": "NPC1",
+    "hgvs": "c.3289G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-03-31"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000271.5",
+    "protein": "p.Asp1097Asn",
+    "accession": "VCV000597436"
+  },
+  {
+    "gene": "PCCA",
+    "hgvs": "c.1353+5_1353+9del",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-08-04"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000282.4",
+    "protein": "",
+    "accession": "VCV000254165"
+  },
+  {
+    "gene": "PEX6",
+    "hgvs": "c.1930C>T",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-11-07"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000287.4",
+    "protein": "p.Arg644Trp",
+    "accession": "VCV000217425"
+  },
+  {
+    "gene": "POLG",
+    "hgvs": "c.3470A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-05-05"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_002693.3",
+    "protein": "p.Asn1157Ser",
+    "accession": "VCV000206565"
+  },
+  {
+    "gene": "PTS",
+    "hgvs": "c.84-291A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-06-15"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000317.3",
+    "protein": "",
+    "accession": "VCV000649292"
+  },
+  {
+    "gene": "SGSH",
+    "hgvs": "c.130G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-06-08"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_000199.5",
+    "protein": "p.Ala44Thr",
+    "accession": "VCV000381685"
+  },
+  {
+    "gene": "TTN",
+    "hgvs": "c.107255G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-06-11"
+        ],
+        "decision": "不出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001267550.2",
+    "protein": "p.Arg35752His",
+    "accession": "VCV000191127"
+  },
+  {
+    "gene": "SLC12A3",
+    "hgvs": "c.1919A>G",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-10-06"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001126108.2",
+    "protein": "p.Asn640Ser",
+    "accession": "VCV000267286"
+  },
+  {
+    "gene": "TTN",
+    "hgvs": "c.1800+1G>A",
+    "records": [
+      {
+        "source": "判讀討論紀錄",
+        "dates": [
+          "2026-07-16"
+        ],
+        "decision": "出報",
+        "note": ""
+      }
+    ],
+    "transcript": "NM_001267550.2",
+    "protein": "",
+    "accession": "VCV000046689"
+  },
+  {
+    "gene": "CYP21A2",
+    "hgvs": "c.188A>T",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [],
+        "decision": "不出報",
+        "note": "考量輕型表現、輔助因子及偽基因干擾的可能。"
+      }
+    ],
+    "transcript": "NM_000500.9",
+    "protein": "p.His63Leu",
+    "accession": "VCV000012183"
+  },
+  {
+    "gene": "UGT1A1",
+    "hgvs": "c.686C>A",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-05-04"
+        ],
+        "decision": "不出報",
+        "note": "考量低外顯率、輕型表現及較新文獻的不確定性。"
+      }
+    ],
+    "transcript": "NM_000463.3",
+    "protein": "p.Pro229Gln",
+    "accession": "VCV000012274"
+  },
+  {
+    "gene": "GALT",
+    "hgvs": "c.940A>G",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2024-11-19"
+        ],
+        "decision": "不出報",
+        "note": "討論依據為 Duarte 型及與啟動子缺失的順式組合。"
+      }
+    ],
+    "transcript": "NM_000155.4",
+    "protein": "p.Asn314Asp",
+    "accession": "VCV000003613"
+  },
+  {
+    "gene": "GALT",
+    "hgvs": "c.-119_-116delGTCA",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2024-11-19"
+        ],
+        "decision": "不出報",
+        "note": "討論依據為 Duarte 型及與 c.940A>G 的順式組合。"
+      }
+    ],
+    "transcript": "NM_000155.4",
+    "protein": "",
+    "accession": "VCV000025111"
+  },
+  {
+    "gene": "MEFV",
+    "hgvs": "c.442G>C",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-06-28"
+        ],
+        "decision": "不出報",
+        "note": "討論考量帶因頻率、低外顯率及其他等位基因。"
+      }
+    ],
+    "transcript": "NM_000243.3",
+    "protein": "p.Glu148Gln",
+    "accession": "VCV000002542"
+  },
+  {
+    "gene": "MEFV",
+    "hgvs": "c.1105C>T",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-01-27"
+        ],
+        "decision": "不出報",
+        "note": "單獨存在時致病性仍不確定，原表引用 PMID 30407166、27473114。"
+      }
+    ],
+    "transcript": "NM_000243.3",
+    "protein": "p.Pro369Ser",
+    "accession": "VCV000002551"
+  },
+  {
+    "gene": "MEFV",
+    "hgvs": "c.1223G>A",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-01-22"
+        ],
+        "decision": "不出報",
+        "note": "討論考量低外顯率及複合變異在患者與健康族群中的觀察。"
+      }
+    ],
+    "transcript": "NM_000243.3",
+    "protein": "p.Arg408Gln",
+    "accession": "VCV000002552"
+  },
+  {
+    "gene": "MEFV",
+    "hgvs": "c.1105C>T+c.1223G>A",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2025-05-20"
+        ],
+        "decision": "不出報",
+        "note": "討論考量兩變異常以順式出現及低外顯率，引用 PMID 19934105、27473114、30996171。"
+      }
+    ],
+    "transcript": "",
+    "protein": "",
+    "accession": "LAB:MEFV||c.1105C>T+c.1223G>A"
+  },
+  {
+    "gene": "MEFV",
+    "hgvs": "c.442G>C+c.1105C>T+c.1223G>A",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2025-06-03"
+        ],
+        "decision": "不出報",
+        "note": "討論認為後兩個變異常以順式出現，第一個變異與其連鎖的證據不足。"
+      }
+    ],
+    "transcript": "",
+    "protein": "",
+    "accession": "LAB:MEFV||c.442G>C+c.1105C>T+c.1223G>A"
+  },
+  {
+    "gene": "FH",
+    "hgvs": "c.208G>A",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2025-06-10"
+        ],
+        "decision": "不出報",
+        "note": "當時討論認為與 FH 相關疾病的關聯證據不足。"
+      }
+    ],
+    "transcript": "NM_000143.4",
+    "protein": "p.Ala70Thr",
+    "accession": "VCV000142062"
+  },
+  {
+    "gene": "SLC22A5",
+    "hgvs": "c.1463G>A",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2025-06-10"
+        ],
+        "decision": "不出報",
+        "note": "討論考量與另一變異的順式組合及對側等位基因。"
+      }
+    ],
+    "transcript": "NM_003060.4",
+    "protein": "p.Arg488His",
+    "accession": "VCV000038794"
+  },
+  {
+    "gene": "CFTR",
+    "hgvs": "c.1727G>C",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-01-05"
+        ],
+        "decision": "不出報",
+        "note": "討論考量單獨與順式組合的功能差異，以及健康族群觀察，引用 PMID 22678879、31005549。"
+      }
+    ],
+    "transcript": "NM_000492.4",
+    "protein": "p.Gly576Ala",
+    "accession": "VCV000007165"
+  },
+  {
+    "gene": "USH1C",
+    "hgvs": "c.92G>A",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-01-05"
+        ],
+        "decision": "不出報",
+        "note": "當時討論認為疾病關聯證據不足，引用 PMID 36846582。"
+      }
+    ],
+    "transcript": "NM_153676.4",
+    "protein": "p.Arg31Gln",
+    "accession": "VCV000522657"
+  },
+  {
+    "gene": "POLG",
+    "hgvs": "c.1402A>G",
+    "records": [
+      {
+        "source": "出報決策與理由",
+        "dates": [
+          "2026-03-11"
+        ],
+        "decision": "不出報",
+        "note": "討論考量複合異型合子報告及功能試驗對體內作用的解讀限制，引用 PMID 16401742、40565516。"
+      }
+    ],
+    "transcript": "NM_002693.3",
+    "protein": "p.Asn468Asp",
+    "accession": "VCV000206596"
+  }
+]
