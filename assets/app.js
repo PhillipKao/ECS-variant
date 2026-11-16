@@ -19,7 +19,7 @@ function persistDrafts(next) {
 }
 function combined() {
   const labs = JSON.parse(JSON.stringify(state.labs));
-  for (const v of state.variants) {
+  for (const v of catalog()) {
     const pending = draftRows(v.accession).sort((a,b) => a.date.localeCompare(b.date));
     if (!pending.length) continue;
     let item = labs.find(x => x.accession === v.accession);
@@ -36,7 +36,7 @@ function refresh() {
   const term = $('#query').value.trim().toLowerCase(), gene = $('#gene-filter').value, filter = $('#lab-filter').value;
   let count = 0;
   for (const row of rows) {
-    const v = state.variants.find(v => v.accession === row.dataset.accession);
+    const v = catalog().find(v => v.accession === row.dataset.accession);
     const has = formal(v.accession).length + draftRows(v.accession).length > 0;
     row.hidden = ![v.gene,v.transcript,v.hgvs,v.protein,v.accession].join(' ').toLowerCase().includes(term) || (gene && v.gene !== gene) || (filter === 'yes' && !has) || (filter === 'no' && has);
     if (!row.hidden) count++;
@@ -45,7 +45,7 @@ function refresh() {
   $('#no-results').hidden = count > 0;
 }
 function render() {
-  $('#variant-total').textContent = state.variants.length;
+  updateIndex();
   $('#lab-total').textContent = state.labs.reduce((n,x) => n+x.history.length,0);
   for (const row of rows) {
     const acc = row.dataset.accession, history = formal(acc), pending = draftRows(acc);
@@ -66,15 +66,56 @@ function render() {
   $('#sync-drafts').hidden = !(token && pendingCount);
   refresh();
 }
-for (const v of state.variants) {
-  const option = document.createElement('option'); option.value=v.accession; option.textContent=`${v.gene} ${v.hgvs} · ${v.accession}`; $('#lab-variant').append(option);
+function catalog() {
+  const all = new Map(state.variants.map(v => [v.accession,v]));
+  for (const item of [...state.labs,...drafts]) {
+    if (!all.has(item.accession) && item.gene && item.hgvs) all.set(item.accession,item);
+  }
+  return [...all.values()];
 }
-for (const gene of new Set(state.variants.map(v=>v.gene))) {
-  const option=document.createElement('option');option.value=gene;option.textContent=gene;$('#gene-filter').append(option);
+function options(id,values) {
+  const list=document.getElementById(id);
+  list.replaceChildren(...[...new Set(values)].map(value=>new Option(value,value)));
+}
+function suggest() {
+  const gene=form.elements.gene.value.trim().toUpperCase();
+  const matches=catalog().filter(v=>v.gene===gene);
+  options('sites',matches.map(v=>v.hgvs));
+  const sites=matches.filter(v=>v.hgvs===form.elements.hgvs.value.trim());
+  options('transcripts',(sites.length ? sites : matches).map(v=>v.transcript));
+}
+form.elements.gene.addEventListener('input',suggest);
+form.elements.hgvs.addEventListener('input',suggest);
+function updateIndex() {
+  const all=catalog();
+  for (const row of [...rows]) if (!all.some(v=>v.accession===row.dataset.accession)) {
+    rows.splice(rows.indexOf(row),1);row.remove();
+  }
+  for (const v of all) {
+    if (rows.some(row=>row.dataset.accession===v.accession)) continue;
+    const row=document.createElement('details');
+    row.className='variant';row.dataset.accession=v.accession;
+    row.innerHTML=`<summary><span class="gene">${esc(v.gene)}</span><span class="variant-id"><strong>${esc(v.hgvs)}</strong><small>${esc(v.transcript)}</small></span><span>實驗室位點</span></summary><div class="variant-body"><p>ClinVar 尚無本站核對紀錄</p><h3>實驗室最近判讀</h3><div data-lab-latest></div><div class="lab-heading"><h3>實驗室判讀歷程</h3><button type="button" class="add-lab" data-target="${esc(v.accession)}">新增判讀</button></div><div data-lab-history></div></div>`;
+    $('#records').append(row);rows.push(row);
+  }
+  const genes=[...new Set(all.map(v=>v.gene))].sort();
+  options('genes',genes);
+  const filter=$('#gene-filter'), saved=filter.value;
+  filter.replaceChildren(new Option('全部基因',''),...genes.map(g=>new Option(g,g)));
+  if (genes.includes(saved)) filter.value=saved;
+  suggest();
+  $('#gene-total').textContent=genes.length;
+  $('#variant-total').textContent=all.length;
 }
 const today = new Date(); $('#lab-date').value = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
 for (const id of ['query','gene-filter','lab-filter']) $('#'+id).addEventListener(id === 'query' ? 'input' : 'change',refresh);
-for (const button of document.querySelectorAll('.add-lab')) button.addEventListener('click',()=>{ $('#lab-variant').value=button.dataset.target;$('#lab-panel').scrollIntoView({behavior:'smooth',block:'start'});$('#lab-date').focus({preventScroll:true}); });
+$('#records').addEventListener('click',event=>{
+  const button=event.target.closest('.add-lab');
+  if (!button) return;
+  const v=catalog().find(v=>v.accession===button.dataset.target);
+  for (const k of ['gene','hgvs','transcript']) form.elements[k].value=v[k];
+  suggest();$('#lab-panel').scrollIntoView({behavior:'smooth'});$('#lab-date').focus({preventScroll:true});
+});
 async function saveToProject(entry) {
   const response = await fetch('/api/lab', {method:'POST',headers:{'Content-Type':'application/json','X-Wiki-Token':token},body:JSON.stringify(entry)});
   const data=await response.json(); if (!response.ok) throw Error(data.error || '儲存失敗');state.labs=data.labs;return data;
@@ -82,7 +123,17 @@ async function saveToProject(entry) {
 form.addEventListener('submit',async event=>{
   event.preventDefault();const button=$('#save-button');button.disabled=true;
   try {
-    const entry=Object.fromEntries(new FormData(form));for (const k of ['scope','note']) entry[k]=entry[k].trim();
+    const entry=Object.fromEntries(new FormData(form));for (const k of ['scope','note','classification','gene','transcript','hgvs']) entry[k]=entry[k].trim();
+    entry.gene=entry.gene.toUpperCase();
+    if (!entry.gene || !entry.hgvs || !entry.classification || [entry.gene,entry.hgvs,entry.transcript].some(k=>k.includes('|'))) throw Error('請填寫有效的基因、位點與判讀結果。');
+    const matches=catalog().filter(v=>v.gene===entry.gene && v.hgvs===entry.hgvs && (!entry.transcript || v.transcript===entry.transcript));
+    if (matches.length>1) throw Error('請選擇轉錄本以區別相同位點標記。');
+    if (matches.length) {
+      const v=matches[0];for (const k of ['accession','protein','transcript']) entry[k]=v[k];
+    } else {
+      if (!entry.transcript) throw Error('首次收錄此位點，請填寫含版本的轉錄本。');
+      entry.protein='';entry.accession='LAB:'+ [entry.gene,entry.transcript,entry.hgvs].join('|');
+    }
     if (!entry.scope || !entry.note) throw Error('請填寫適用範圍與判讀原因。');
     const latest=[...formal(entry.accession),...draftRows(entry.accession)].sort((a,b)=>a.date.localeCompare(b.date)).at(-1);
     if (latest && entry.date < latest.date) throw Error('日期不得早於既有判讀；歷史紀錄需依時間追加。');
@@ -91,7 +142,7 @@ form.addEventListener('submit',async event=>{
     entry.record_id=globalThis.crypto?.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
     if (token) {await saveToProject(entry);message('已寫入專案 data/lab.json，首頁已重建。');}
     else {persistDrafts([...drafts,entry]);message('已保存為此瀏覽器的本機草稿，尚未寫入專案或公開網站。可匯出 lab.json，或在本機編輯器中寫入專案。');}
-    const row=rows.find(r=>r.dataset.accession===entry.accession);row.open=true;render();
+    $('#query').value='';$('#gene-filter').value='';$('#lab-filter').value='';render();rows.find(r=>r.dataset.accession===entry.accession).open=true;
     form.elements.note.value='';
   } catch(error) {message(error.message,true);} finally {button.disabled=false;}
 });
