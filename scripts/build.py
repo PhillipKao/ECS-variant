@@ -104,7 +104,7 @@ def record(item, labs):
 def main():
     variants, labs = load('variants'), load('lab')
     validate(variants, labs)
-    state = json.dumps({'variants': variants, 'labs': labs}, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    state = json.dumps({'variants': variants, 'labs': labs, 'archive': load('archive') if (ROOT / 'data/archive.json').exists() else []}, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
     template = (ROOT / 'template.html').read_text(encoding='utf-8')
     if template.count('<!-- RECORDS -->') != 1 or template.count('<!-- STATE -->') != 1:
         raise ValueError('Missing or duplicate template insertion point')
