@@ -64,7 +64,7 @@ class WikiTests(unittest.TestCase):
         status,data=request('POST','/api/lab',json.dumps(self.payload),headers);self.assertEqual(status,200)
         self.assertTrue(json.loads(data)['added'])
         status,page=request('GET','/');self.assertEqual(status,200);self.assertIn('隔離測試',page.decode())
-        status,data=request('GET','/api/state');self.assertEqual(len(json.loads(data)['labs'][0]['history']),1)
+        status,data=request('GET','/api/state');self.assertEqual(len(next(v for v in json.loads(data)['labs'] if v['accession']==self.payload['accession'])['history']),1)
         status,data=request('POST','/api/lab',json.dumps(self.payload),headers);self.assertFalse(json.loads(data)['added'])
         status,_=request('POST','/api/lab',json.dumps(self.payload),{'Content-Type':'application/json'});self.assertEqual(status,403)
         status,_=request('POST','/api/lab',json.dumps(self.payload),{**headers,'Origin':'https://example.com'});self.assertEqual(status,403)
