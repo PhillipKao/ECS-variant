@@ -18,7 +18,12 @@ def append_record(variants, labs, payload):
     acc = payload['accession']
     variant = next((v for v in variants if v['accession'] == acc), None)
     if variant is None:
-        raise ValueError('請選擇已收錄的 ClinVar 位點')
+        gene = payload.get('gene', '').strip().upper()
+        transcript = payload.get('transcript', '').strip()
+        hgvs = payload.get('hgvs', '').strip()
+        if not all((gene, transcript, hgvs)) or acc != 'LAB:' + '|'.join((gene, transcript, hgvs)) or any('|' in k for k in (gene, transcript, hgvs)):
+            raise ValueError('請填寫基因、位點與含版本的轉錄本')
+        variant = dict(accession=acc, gene=gene, transcript=transcript, hgvs=hgvs, protein='')
     fields = {}
     for key in ('date', 'classification', 'scope', 'note', 'record_id'):
         value = payload.get(key)
@@ -26,8 +31,8 @@ def append_record(variants, labs, payload):
             raise ValueError('日期、分類、範圍與判讀原因皆必填')
         fields[key] = value.strip()
     date.fromisoformat(fields['date'])
-    if fields['classification'] not in build.LAB_CLASSES:
-        raise ValueError('不支援的實驗室分類')
+    if len(fields['classification']) > 200:
+        raise ValueError('判讀結果過長')
     if len(fields['note']) > 12000 or len(fields['scope']) > 500 or len(fields['record_id']) > 100:
         raise ValueError('輸入內容過長')
     updated = deepcopy(labs)
