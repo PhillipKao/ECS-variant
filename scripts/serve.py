@@ -1,5 +1,6 @@
 """Local-only editor: python3 scripts/serve.py (standard library only)."""
 import argparse
+import re
 from copy import deepcopy
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -21,19 +22,23 @@ def append_record(variants, labs, payload):
         gene = payload.get('gene', '').strip().upper()
         transcript = payload.get('transcript', '').strip()
         hgvs = payload.get('hgvs', '').strip()
-        if not all((gene, transcript, hgvs)) or acc != 'LAB:' + '|'.join((gene, transcript, hgvs)) or any('|' in k for k in (gene, transcript, hgvs)):
-            raise ValueError('請填寫基因、位點與含版本的轉錄本')
-        variant = dict(accession=acc, gene=gene, transcript=transcript, hgvs=hgvs, protein='')
+        local_id = 'LAB:' + '|'.join((gene, transcript, hgvs))
+        pending_id = 'LAB:' + '|'.join((gene, '', hgvs))
+        if not gene or not hgvs or not (acc in (local_id, pending_id) or re.fullmatch(r'VCV\d{9}', acc)):
+            raise ValueError('位點識別資料不完整')
+        variant = dict(accession=acc, gene=gene, transcript=transcript, hgvs=hgvs, protein=payload.get('protein', ''))
     fields = {}
     for key in ('date', 'classification', 'scope', 'note', 'record_id'):
         value = payload.get(key)
         if not isinstance(value, str) or not value.strip():
             raise ValueError('日期、分類、範圍與判讀原因皆必填')
         fields[key] = value.strip()
+    if re.fullmatch(r'VCV\d+\.\d+', payload.get('clinvar_version', '')):
+        fields['clinvar_version'] = payload['clinvar_version']
     date.fromisoformat(fields['date'])
     if len(fields['classification']) > 200:
         raise ValueError('判讀結果過長')
-    if len(fields['note']) > 12000 or len(fields['scope']) > 500 or len(fields['record_id']) > 100:
+    if len(fields['note']) > 12000 or len(fields['record_id']) > 100:
         raise ValueError('輸入內容過長')
     updated = deepcopy(labs)
     lab = next((x for x in updated if x['accession'] == acc), None)
@@ -43,6 +48,8 @@ def append_record(variants, labs, payload):
                 if item['accession'] != acc or any(snap[k] != fields[k] for k in ('date','classification','scope','note')):
                     raise ValueError('紀錄識別碼已用於其他內容')
                 return updated, False
+    if lab is not None and not lab['transcript'] and variant['transcript']:
+        lab.update(transcript=variant['transcript'], protein=variant['protein'])
     if lab is None:
         lab = {k:variant[k] for k in ('gene','transcript','hgvs','protein','accession')}
         lab['history'] = []

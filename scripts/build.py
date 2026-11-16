@@ -43,7 +43,7 @@ def validate(variants, labs):
     seen, requests = set(), set()
     for item in labs:
         acc = item['accession']
-        if acc in seen or (acc not in identities and not (acc.startswith('LAB:') and all(item[k].strip() for k in ('gene','transcript','hgvs')))):
+        if acc in seen or (acc not in identities and not ((acc.startswith('LAB:') or re.fullmatch(r'VCV\d{9}',acc)) and all(item[k].strip() for k in ('gene','hgvs')))):
             raise ValueError(f'Laboratory variant must match one existing VCV: {acc}')
         seen.add(acc)
         for key in ('gene', 'transcript', 'hgvs', 'protein'):
