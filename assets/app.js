@@ -3,6 +3,8 @@ const state = JSON.parse(document.getElementById('wiki-state').textContent);
 const $ = selector => document.querySelector(selector);
 const rows = [...document.querySelectorAll('.variant')];
 const form = $('#lab-form');
+const archive = state.archive || [];
+const archiveById = new Map(archive.map(v => [v.accession,v]));
 const key = 'biolove.variant-wiki.lab-drafts.v1';
 let drafts = [], storageAvailable = true, token = null;
 try { drafts = JSON.parse(localStorage.getItem(key) || '[]'); if (!Array.isArray(drafts)) throw Error('草稿格式錯誤'); } catch { drafts = []; storageAvailable = false; }
@@ -37,7 +39,7 @@ function refresh() {
   let count = 0;
   for (const row of rows) {
     const v = catalog().find(v => v.accession === row.dataset.accession);
-    const has = formal(v.accession).length + draftRows(v.accession).length > 0;
+    const has = formal(v.accession).length + draftRows(v.accession).length + (archiveById.get(v.accession)?.records.length || 0) > 0;
     row.hidden = ![v.gene,v.transcript,v.hgvs,v.protein,v.accession].join(' ').toLowerCase().includes(term) || (gene && v.gene !== gene) || (filter === 'yes' && !has) || (filter === 'no' && has);
     if (!row.hidden) count++;
   }
@@ -61,6 +63,23 @@ function render() {
     row.querySelector('[data-lab-latest]').innerHTML = history.length ? badge(history.at(-1).classification)+`<small>${esc(history.at(-1).date)}</small>` : '尚未判讀';
     if (pending.length) row.querySelector('[data-lab-latest]').innerHTML += `<small>另有 ${pending.length} 筆本機草稿</small>`;
   }
+  for (const row of rows) {
+    const item=archiveById.get(row.dataset.accession);
+    if (!item) continue;
+    row.querySelector('.archived')?.remove();
+    const panel=document.createElement('div');
+    panel.className='archived';
+    panel.innerHTML='<h3>實驗室歷年出報討論</h3>'+item.records.map(record=>{
+      const dates=record.dates.length ? record.dates.join('、') : '日期未載';
+      return `<section class="event"><small>討論日期 · ${esc(dates)}</small><h4>出報決策 · ${esc(record.decision)}</h4>${record.note ? '<p>'+esc(record.note)+'</p>' : ''}<small>${esc(record.source)}</small></section>`;
+    }).join('');
+    row.querySelector('.variant-body').append(panel);
+    if (!formal(item.accession).length) {
+      row.querySelector('[data-lab-latest]').textContent='見歷年出報討論';
+      if (!draftRows(item.accession).length) row.querySelector('[data-lab-history]').textContent='尚無新增的分類紀錄';
+    }
+  }
+  $('#archive-total').textContent=archive.reduce((sum,v)=>sum+v.records.length,0);
   const pendingCount = drafts.filter(d => !isFormalDraft(d)).length;
   $('#draft-count').textContent = pendingCount ? `此瀏覽器有 ${pendingCount} 筆未正式存檔草稿。匯出包含既有紀錄與草稿，原草稿仍會保留。` : '目前沒有本機草稿。';
   $('#sync-drafts').hidden = !(token && pendingCount);
@@ -68,7 +87,7 @@ function render() {
 }
 function catalog() {
   const all = new Map(state.variants.map(v => [v.accession,v]));
-  for (const item of [...state.labs,...drafts]) {
+  for (const item of [...archive,...state.labs,...drafts]) {
     if (!all.has(item.accession) && item.gene && item.hgvs) all.set(item.accession,item);
   }
   return [...all.values()];
@@ -93,7 +112,7 @@ function updateIndex() {
     if (rows.some(row=>row.dataset.accession===v.accession)) continue;
     const row=document.createElement('details');
     row.className='variant';row.dataset.accession=v.accession;
-    row.innerHTML=`<summary><span class="gene">${esc(v.gene)}</span><span class="variant-id"><strong>${esc(v.hgvs)}</strong><small>${esc(v.transcript)}</small></span><span>實驗室位點</span></summary><div class="variant-body"><p>ClinVar 尚無本站核對紀錄</p><h3>實驗室最近判讀</h3><div data-lab-latest></div><div class="lab-heading"><h3>實驗室判讀歷程</h3><button type="button" class="add-lab" data-target="${esc(v.accession)}">新增判讀</button></div><div data-lab-history></div></div>`;
+    row.innerHTML=`<summary><span class="gene">${esc(v.gene)}</span><span class="variant-id"><strong>${esc(v.hgvs)}</strong><small>${esc(v.transcript)}</small></span><span>實驗室位點</span></summary><div class="variant-body"><p>ClinVar 版本待核對</p><h3>實驗室最近判讀</h3><div data-lab-latest></div><div class="lab-heading"><h3>實驗室判讀歷程</h3><button type="button" class="add-lab" data-target="${esc(v.accession)}">新增判讀</button></div><div data-lab-history></div></div>`;
     $('#records').append(row);rows.push(row);
   }
   const genes=[...new Set(all.map(v=>v.gene))].sort();
