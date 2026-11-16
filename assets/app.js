@@ -27,7 +27,7 @@ function combined() {
     for (const d of pending) {
       if (item.history.some(h => h.record_id === d.record_id || ['date','classification','scope','note'].every(k => h[k] === d[k]))) continue;
       if (item.history.length && d.date < item.history.at(-1).date) throw Error('草稿日期早於專案最近判讀，請先與維護者核對，避免覆寫歷史。');
-      item.history.push({revision:(item.history.at(-1)?.revision || 0)+1,date:d.date,classification:d.classification,scope:d.scope,note:d.note,record_id:d.record_id});
+      item.history.push({revision:(item.history.at(-1)?.revision || 0)+1,date:d.date,classification:d.classification,scope:d.scope,clinvar_version:d.clinvar_version,note:d.note,record_id:d.record_id});
     }
   }
   return labs;
@@ -55,7 +55,7 @@ function render() {
     const html = entries.map(h => {
       const change = !previous ? '首次判讀' : previous.classification === h.classification ? '分類維持不變' : `${previous.classification} → ${h.classification}`;
       previous = h;
-      return `<section class="event"><small>${esc(h.date)} · ${h.draft ? '<span class="draft-tag">本機草稿・尚未寫入專案</span>' : '第 '+esc(h.revision)+' 筆'}</small><h4>${esc(change)}</h4>${badge(h.classification)}<p class="multiline">${esc(h.note)}</p><small>${esc(h.scope)}</small>${h.draft ? `<p><button type="button" class="text-button discard-draft" data-record-id="${esc(h.record_id)}">刪除此筆草稿</button></p>` : ''}</section>`;
+      return `<section class="event"><small>${esc(h.date)} · ${h.draft ? '<span class="draft-tag">本機草稿・尚未寫入專案</span>' : '第 '+esc(h.revision)+' 筆'}</small><h4>${esc(change)}</h4>${badge(h.classification)}<p class="multiline">${esc(h.note)}</p><small>${esc(h.scope)} ${h.clinvar_version && /^VCV\d+\.\d+$/.test(h.clinvar_version) ? `· <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/${h.clinvar_version}/">${h.clinvar_version}</a>` : ''}</small>${h.draft ? `<p><button type="button" class="text-button discard-draft" data-record-id="${esc(h.record_id)}">刪除此筆草稿</button></p>` : ''}</section>`;
     }).reverse().join('');
     row.querySelector('[data-lab-history]').innerHTML = html || '<p class="empty">尚無實驗室判讀。可在右側表單新增第一筆紀錄。</p>';
     row.querySelector('[data-lab-latest]').innerHTML = history.length ? badge(history.at(-1).classification)+`<small>${esc(history.at(-1).date)}</small>` : '尚未判讀';
@@ -81,8 +81,6 @@ function suggest() {
   const gene=form.elements.gene.value.trim().toUpperCase();
   const matches=catalog().filter(v=>v.gene===gene);
   options('sites',matches.map(v=>v.hgvs));
-  const sites=matches.filter(v=>v.hgvs===form.elements.hgvs.value.trim());
-  options('transcripts',(sites.length ? sites : matches).map(v=>v.transcript));
 }
 form.elements.gene.addEventListener('input',suggest);
 form.elements.hgvs.addEventListener('input',suggest);
@@ -113,7 +111,7 @@ $('#records').addEventListener('click',event=>{
   const button=event.target.closest('.add-lab');
   if (!button) return;
   const v=catalog().find(v=>v.accession===button.dataset.target);
-  for (const k of ['gene','hgvs','transcript']) form.elements[k].value=v[k];
+  for (const k of ['gene','hgvs']) form.elements[k].value=v[k];
   suggest();$('#lab-panel').scrollIntoView({behavior:'smooth'});$('#lab-date').focus({preventScroll:true});
 });
 async function saveToProject(entry) {
@@ -123,18 +121,20 @@ async function saveToProject(entry) {
 form.addEventListener('submit',async event=>{
   event.preventDefault();const button=$('#save-button');button.disabled=true;
   try {
-    const entry=Object.fromEntries(new FormData(form));for (const k of ['scope','note','classification','gene','transcript','hgvs']) entry[k]=entry[k].trim();
+    const entry=Object.fromEntries(new FormData(form));for (const k of ['note','classification','gene','hgvs']) entry[k]=entry[k].trim();
     entry.gene=entry.gene.toUpperCase();
-    if (!entry.gene || !entry.hgvs || !entry.classification || [entry.gene,entry.hgvs,entry.transcript].some(k=>k.includes('|'))) throw Error('請填寫有效的基因、位點與判讀結果。');
-    const matches=catalog().filter(v=>v.gene===entry.gene && v.hgvs===entry.hgvs && (!entry.transcript || v.transcript===entry.transcript));
-    if (matches.length>1) throw Error('請選擇轉錄本以區別相同位點標記。');
-    if (matches.length) {
-      const v=matches[0];for (const k of ['accession','protein','transcript']) entry[k]=v[k];
-    } else {
-      if (!entry.transcript) throw Error('首次收錄此位點，請填寫含版本的轉錄本。');
-      entry.protein='';entry.accession='LAB:'+ [entry.gene,entry.transcript,entry.hgvs].join('|');
-    }
-    if (!entry.scope || !entry.note) throw Error('請填寫適用範圍與判讀原因。');
+    if (!entry.gene || !entry.hgvs || !entry.classification || !entry.note || [entry.gene,entry.hgvs].some(k=>k.includes('|'))) throw Error('請填寫基因、位點、判讀結果與依據。');
+    message('正在查詢 NCBI ClinVar…');
+    let result;
+    try {result=await resolveClinVar(entry.gene,entry.hgvs);}
+    catch {result={status:'ClinVar 連線失敗，待核對'};}
+    const matches=catalog().filter(v=>v.gene===entry.gene && v.hgvs===entry.hgvs);
+    const existing=matches.find(v=>v.accession===result.accession) || (matches.length===1 ? matches[0] : null);
+    entry.transcript=result.transcript || existing?.transcript || '';
+    entry.protein=result.protein || existing?.protein || '';
+    entry.accession=existing?.accession || result.accession || 'LAB:'+ [entry.gene,'',entry.hgvs].join('|');
+    entry.scope=result.scope || result.status;
+    if (result.version) entry.clinvar_version=result.version;
     const latest=[...formal(entry.accession),...draftRows(entry.accession)].sort((a,b)=>a.date.localeCompare(b.date)).at(-1);
     if (latest && entry.date < latest.date) throw Error('日期不得早於既有判讀；歷史紀錄需依時間追加。');
     const duplicate=[...formal(entry.accession),...draftRows(entry.accession)].some(h=>['date','classification','scope','note'].every(k=>h[k]===entry[k]));

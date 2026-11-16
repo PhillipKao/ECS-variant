@@ -7,3 +7,16 @@
 .primary:hover {background:#174c70}
 .primary::before,.secondary::before,.add-lab::before,.nav-link::before {content:"☁";display:inline-block;margin-right:.45em;font:1.25em/1 system-ui}
 .secondary,.add-lab {background:#edf6fb;color:#235775;border:1px solid #b6d3e3;padding:5px 12px}
+
+.hero {background:linear-gradient(115deg,#122a39,#193f50 75%,#204f59);color:#fcfdff;border:0}
+.hero:after {display:none}
+.hero .eyebrow,.hero h1 span {color:#ffb58b}
+.hero p,.hero-meta,.hero-meta b {color:#e0eef2}
+.hero .public-tag {color:#b7ece4;border-color:#719f9e}
+.hero .wrap {padding-block:42px}
+.genome-art {position:absolute;width:33%;right:3%;top:16%;max-height:190px}
+.hero h1 {font-size:clamp(18px,3.8vw,52px)}
+.workspace {background:linear-gradient(180deg,#eef4f5,transparent 260px)}
+.form-card {border-top-color:#317d87}
+.variant[open] {box-shadow:0 8px 25px #15394912}
+@media(max-width:900px){.genome-art{position:static;display:block;width:min(100%,370px);height:105px;margin:0 0 20px}.hero .wrap{padding-block:24px}.hero p{margin-bottom:8px}}
