@@ -50,8 +50,12 @@ def validate(variants, labs):
             if acc in identities and item[key] != identities[acc][key]:
                 raise ValueError(f'Laboratory identity mismatch: {acc}')
         previous = None
-        if not item['history']:
+        reports = item.get('reporting_history', [])
+        if not item['history'] and not reports:
             raise ValueError('Empty laboratory history')
+        for report in reports:
+            if not (report['source'].strip() and report['decision'].strip() and isinstance(report['dates'], list) and isinstance(report['note'], str)):
+                raise ValueError(f'Incomplete reporting decision: {acc}')
         for snap in item['history']:
             date.fromisoformat(snap['date'])
             if type(snap['revision']) is not int or snap['revision'] < 1:
@@ -104,7 +108,7 @@ def record(item, labs):
 def main():
     variants, labs = load('variants'), load('lab')
     validate(variants, labs)
-    state = json.dumps({'variants': variants, 'labs': labs, 'archive': load('archive') if (ROOT / 'data/archive.json').exists() else []}, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    state = json.dumps({'variants': variants, 'labs': labs}, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
     template = (ROOT / 'template.html').read_text(encoding='utf-8')
     if template.count('<!-- RECORDS -->') != 1 or template.count('<!-- STATE -->') != 1:
         raise ValueError('Missing or duplicate template insertion point')
